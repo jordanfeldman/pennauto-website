@@ -104,12 +104,14 @@ address { font-style: normal; }
 }
 .logo img { display: block; height: 44px; width: auto; }
 .main-nav ul { list-style: none; padding: 0; display: flex; gap: 0.25rem; align-items: center; }
+.main-nav li { display: flex; align-items: center; }
 .main-nav a {
   color: var(--color-mid);
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.4rem 0.75rem;
   border-radius: 6px;
+  line-height: 1;
   transition: color var(--transition), background var(--transition);
 }
 .main-nav a:hover { color: var(--color-dark); background: var(--color-warm-white); text-decoration: none; }
