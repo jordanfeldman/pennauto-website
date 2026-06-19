@@ -4,6 +4,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/admin");
 
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   // Make site data available globally
   eleventyConfig.addGlobalData("site", {
     name: "Penn Automotive",
