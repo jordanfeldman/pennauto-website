@@ -6,7 +6,7 @@
   --color-primary-dark: #a93226;
   --color-dark:         #111;
   --color-mid:          #444;
-  --color-muted:        #888;
+  --color-muted:        #666;
   --color-warm-white:   #faf9f7;
   --color-white:        #fff;
   --color-border:       #e8e6e3;
@@ -219,7 +219,7 @@ address { font-style: normal; }
   margin-bottom: 0.5rem;
 }
 .highlight-stat span { color: var(--color-primary); }
-.highlight-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600; }
+.highlight-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.75); font-weight: 600; }
 
 /* ─── Services ────────────────────────────────────── */
 .services-overview { padding: 6rem 2rem; background: var(--color-warm-white); }
