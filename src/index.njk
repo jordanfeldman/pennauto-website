@@ -4,7 +4,11 @@ title: Home
 description: Penn Automotive — family-run collision repair serving the Pittsburgh area since 1959.
 ---
 
-<section class="hero" style="background-image: url('/assets/images/shop-exterior.jpg');">
+<section class="hero">
+  <picture class="hero-bg-picture">
+    <source srcset="/assets/images/shop-exterior.webp" type="image/webp">
+    <img src="/assets/images/shop-exterior.jpg" alt="Penn Automotive shop exterior" class="hero-bg-img" fetchpriority="high" width="1600" height="900">
+  </picture>
   <div class="container">
     <span class="hero-eyebrow">Serving Pittsburgh Since 1959</span>
     <h1>A Passion for<br>Fixing Cars</h1>

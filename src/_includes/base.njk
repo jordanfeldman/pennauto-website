@@ -6,13 +6,15 @@
   <title>{{ title }} | Penn Automotive</title>
   <meta name="description" content="{{ description or 'Penn Automotive — family-run collision repair serving Pittsburgh since 1959.' }}">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="preload" as="image" href="/assets/images/shop-exterior.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/shop-exterior.webp" fetchpriority="high" type="image/webp">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a href="/" class="logo">
-        <img src="/assets/images/penn_logo1.png" alt="Penn Automotive" width="138" height="44">
+        <picture>
+          <img src="/assets/images/penn_logo1.png" alt="Penn Automotive" width="138" height="44">
+        </picture>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
