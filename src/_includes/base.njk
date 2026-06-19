@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Penn Automotive</title>
+  <meta name="description" content="{{ description or 'Penn Automotive — family-run collision repair serving Pittsburgh since 1959.' }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/assets/images/penn_logo1.png" alt="Penn Automotive" height="48">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/collision/">Collision Repair</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/photos/">Photos</a></li>
+          <li><a href="/contact/" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div>
+          <h3>Penn Automotive</h3>
+          <p>Family-run collision repair serving the Pittsburgh area since 1959.</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <address>
+            <p>{{ site.address }}</p>
+            <p><a href="tel:+14124617500">{{ site.phone }}</a></p>
+            <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+          </address>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/collision/">Collision Repair</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/photos/">Photos</a></li>
+            <li><a href="/contact/">Contact & Hours</a></li>
+            <li><a href="/policies/">Policies & Procedures</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; {{ '' | date('yyyy') }} Penn Automotive. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
