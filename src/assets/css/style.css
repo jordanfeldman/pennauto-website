@@ -353,6 +353,9 @@ button.btn { border: none; font-family: inherit; cursor: pointer; }
 .hours-table td:last-child { text-align: right; font-weight: 600; color: var(--color-dark); }
 .map-embed iframe { border-radius: var(--radius); display: block; }
 .map-embed .apple-map { height: 350px; border-radius: var(--radius); overflow: hidden; background: var(--color-warm-white); }
+.apple-map-callout { display: flex; flex-direction: column; gap: 0.15rem; max-width: 220px; font-size: 0.85rem; line-height: 1.35; color: var(--color-mid); }
+.apple-map-callout strong { color: var(--color-dark); font-size: 0.95rem; }
+.apple-map-callout a { margin-top: 0.4rem; font-weight: 700; }
 
 /* ─── Photo Grid ──────────────────────────────────── */
 .photo-grid {

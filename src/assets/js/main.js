@@ -84,6 +84,23 @@ if (mapEmbed && mapEmbed.dataset.mapkitToken && isApple) {
       subtitle: address,
       color: '#c0392b',
       selected: true,
+      callout: {
+        calloutContentForAnnotation: annotation => {
+          const el = document.createElement('div');
+          el.className = 'apple-map-callout';
+          const title = document.createElement('strong');
+          title.textContent = annotation.title;
+          const subtitle = document.createElement('span');
+          subtitle.textContent = annotation.subtitle;
+          const link = document.createElement('a');
+          link.href = 'https://maps.apple.com/?daddr=' + encodeURIComponent(address);
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.textContent = 'Directions in Apple Maps →';
+          el.append(title, subtitle, link);
+          return el;
+        },
+      },
     }));
   };
 
