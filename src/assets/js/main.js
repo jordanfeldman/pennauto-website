@@ -53,3 +53,47 @@ if (bookingButtons.length) {
     });
   });
 }
+
+// Contact page map: show an Apple map on Apple devices when a MapKit token is
+// set; otherwise (or if MapKit fails to load) keep the Google embed
+const mapEmbed = document.querySelector('.map-embed[data-mapkit-token]');
+if (mapEmbed && mapEmbed.dataset.mapkitToken && isApple) {
+  const googleMap = mapEmbed.querySelector('iframe');
+  const appleMap = document.createElement('div');
+  appleMap.className = 'apple-map';
+  appleMap.setAttribute('role', 'region');
+  appleMap.setAttribute('aria-label', 'Penn Automotive location map');
+  mapEmbed.replaceChild(appleMap, googleMap);
+
+  let fellBack = false;
+  const useGoogleMap = () => {
+    if (fellBack) return;
+    fellBack = true;
+    mapEmbed.replaceChild(googleMap, appleMap);
+  };
+
+  window.initPennMapKit = () => {
+    mapkit.addEventListener('error', useGoogleMap);
+    const coord = new mapkit.Coordinate(Number(mapEmbed.dataset.lat), Number(mapEmbed.dataset.lng));
+    const map = new mapkit.Map(appleMap, {
+      region: new mapkit.CoordinateRegion(coord, new mapkit.CoordinateSpan(0.008, 0.008)),
+      showsPointsOfInterest: true,
+    });
+    map.addAnnotation(new mapkit.MarkerAnnotation(coord, {
+      title: 'Penn Automotive',
+      subtitle: address,
+      color: '#c0392b',
+      selected: true,
+    }));
+  };
+
+  const script = document.createElement('script');
+  script.src = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js';
+  script.crossOrigin = 'anonymous';
+  script.async = true;
+  script.dataset.callback = 'initPennMapKit';
+  script.dataset.libraries = 'map,annotations';
+  script.dataset.initialToken = mapEmbed.dataset.mapkitToken;
+  script.onerror = useGoogleMap;
+  document.head.appendChild(script);
+}

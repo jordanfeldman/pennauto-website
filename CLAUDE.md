@@ -25,6 +25,7 @@ Static site for Penn Automotive (pennauto.us), a family-run collision repair sho
 ## Key Design Decisions
 - **Online booking is the top CTA** — the homepage hero leads with the red "Book an Appointment" button (Tekmetric; shared button in `src/_includes/booking-button.njk`, loader in `main.js`). Email (`info@pennauto.us`) is the next preferred contact method and remains the red primary button elsewhere; phone number secondary
 - **Maps links use `data-map` attribute** — JS in `main.js` detects Apple vs non-Apple and swaps href to Apple Maps or Google Maps accordingly. Always use `data-map` on any directions link; set the fallback `href` to Google Maps
+- **Contact page map** — Apple devices get an Apple MapKit JS map; everyone else (or if MapKit fails) gets the Google embed. The token is `mapkitToken` in `.eleventy.js`: an ES256 JWT signed with Apple Key ID `LS3Q3X27A3`, Team ID `PDWY4G5CFR`, `origin: https://pennauto.us`. **It expires Oct 1, 2027** — after that the map silently falls back to Google until a new token is signed (needs the key's `.p8`, never commit it)
 - **Copyright year** — uses `{% year %}` Eleventy shortcode (defined in `.eleventy.js`), never hardcode the year
 - **Images** live in `src/assets/images/`. Run `node scripts/optimize-images.js` after adding new images (uses sharp)
 - **Global `li + li` margin** — there's a global `li + li { margin-top: 0.5rem }` rule. Always add `margin-top: 0` to nav `li` elements to prevent misalignment in flex rows
