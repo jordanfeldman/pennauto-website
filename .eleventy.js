@@ -10,9 +10,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("site", {
     name: "Penn Automotive",
     phone: "(412) 461-7500",
-    email: "joel@pennauto.us",
+    email: "info@pennauto.us",
     address: "243 West 8th Ave, West Homestead, PA 15120",
     city: "West Homestead, PA 15120",
+    tekmetricShopId: "b92059d2-febd-4dc6-8bbe-7bbea2ec5e50",
   });
 
   return {

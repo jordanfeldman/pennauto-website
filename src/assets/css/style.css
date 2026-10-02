@@ -50,6 +50,7 @@ address { font-style: normal; }
   letter-spacing: 0.01em;
 }
 .btn:hover { transform: translateY(-1px); text-decoration: none; }
+button.btn { border: none; font-family: inherit; cursor: pointer; }
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-white);
@@ -294,6 +295,11 @@ address { font-style: normal; }
 .review-text { font-size: 0.95rem; color: var(--color-mid); line-height: 1.65; margin: 0; flex: 1; }
 .review-author { font-size: 0.85rem; font-weight: 700; color: var(--color-dark); }
 .reviews-cta { text-align: center; }
+
+/* ─── Booking ─────────────────────────────────────── */
+.booking-section { padding: 6rem 2rem; background: var(--color-warm-white); border-top: 1px solid var(--color-border); }
+.booking-section .section-header { margin-bottom: 2rem; }
+.booking-actions { text-align: center; }
 
 /* ─── CTA Band ────────────────────────────────────── */
 .cta-band {

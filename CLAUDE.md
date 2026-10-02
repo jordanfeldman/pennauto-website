@@ -23,7 +23,7 @@ Static site for Penn Automotive (pennauto.us), a family-run collision repair sho
 | `src/policies.njk` | `/policies/` |
 
 ## Key Design Decisions
-- **Email is the preferred contact method** — `joel@pennauto.us` should be the primary CTA button (red), phone number secondary
+- **Online booking is the top CTA** — the homepage hero leads with the red "Book an Appointment" button (Tekmetric; shared button in `src/_includes/booking-button.njk`, loader in `main.js`). Email (`info@pennauto.us`) is the next preferred contact method and remains the red primary button elsewhere; phone number secondary
 - **Maps links use `data-map` attribute** — JS in `main.js` detects Apple vs non-Apple and swaps href to Apple Maps or Google Maps accordingly. Always use `data-map` on any directions link; set the fallback `href` to Google Maps
 - **Copyright year** — uses `{% year %}` Eleventy shortcode (defined in `.eleventy.js`), never hardcode the year
 - **Images** live in `src/assets/images/`. Run `node scripts/optimize-images.js` after adding new images (uses sharp)
@@ -36,7 +36,7 @@ Static site for Penn Automotive (pennauto.us), a family-run collision repair sho
 
 ## Business Info
 - **Phone**: (412) 461-7500
-- **Email**: joel@pennauto.us
+- **Email**: info@pennauto.us
 - **Address**: 243 West 8th Ave, West Homestead, PA 15120
 - **Hours**: Mon–Fri 8:00 AM – 5:00 PM, Sat by appointment, Sun closed
 
